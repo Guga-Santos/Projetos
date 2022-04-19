@@ -1,9 +1,9 @@
-import React from 'react';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
 import { act } from 'react-dom/test-utils';
-
 import App from './App';
 import testData from './testData';
+
 
 const ROW_ROLE_SELECTOR = 'row';
 const COLUMN_ROLE_SELECTOR = 'columnheader';
