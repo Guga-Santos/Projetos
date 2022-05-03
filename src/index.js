@@ -1,5 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './Font/Starjedi.ttf';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <div>
+    <App />
+    <audio
+      src="http://upbeatmusicproductions.com/_UpBeatPractice/StarWars/Main%20Title.mp3"
+      controls
+      autoPlay
+      hidden
+    />
+  </div>,
+  document.getElementById('root'),
+);

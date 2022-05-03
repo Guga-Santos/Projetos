@@ -7,33 +7,35 @@ export default function FiltersOnScreen() {
 
   return (
     <div>
-      {
-        numericFilter.map((obj) => (
-          <div
-            data-testid="filter"
-            key={ Math.random() }
-            style={ { display: 'flex', alignItems: 'center' } }
-          >
-            <h4>
-              {' '}
-              {obj.column}
-              {' '}
-              {obj.comparison}
-              {' '}
-              {obj.value}
-            </h4>
-            <button
-              type="button"
-              style={ { margin: '0px 10px' } }
-              id={ obj.column }
-              onClick={ deleteFilter }
+      <div className="filtersOnScreen">
+        {
+          numericFilter.map((obj) => (
+            <div
+              className="filters-selected"
+              data-testid="filter"
+              key={ Math.random() }
+              style={ { display: 'flex', alignItems: 'center' } }
             >
-              X
+              <h4>
+                {' '}
+                {obj.column}
+                {' '}
+                {obj.comparison}
+                {' '}
+                {obj.value}
+              </h4>
+              <button
+                type="button"
+                id={ obj.column }
+                onClick={ deleteFilter }
+              >
+                X
 
-            </button>
-          </div>
-        ))
-      }
+              </button>
+            </div>
+          ))
+        }
+      </div>
       <button
         type="button"
         data-testid="button-remove-filters"

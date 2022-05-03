@@ -1,11 +1,25 @@
 * {
   margin: 0;
   padding: 0;
+
+  /* font-size: 1.1rem;
+  font-weight: 900; */
+  /* background-color: black; */
+
+  color: white;
+
+  /* text-shadow: 0px 1px  white; */
+  /* background-image: url("https://img.ibxk.com.br/2018/06/22/gif-22163357233543.gif"); */
 }
 
 /* TABLE */
 .big-container {
+  background-color: black;
+  background: url("https://wallpaperaccess.com/full/11796.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: blue;
+  background-position: 40% 40%;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -14,7 +28,7 @@
 
 
 tr {
-  background-color: yellow;
+  background-color:transparent;
   max-height: 2vh;
   max-width: calc(100vw / 13);
   overflow: hidden;

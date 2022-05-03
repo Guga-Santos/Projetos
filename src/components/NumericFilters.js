@@ -37,13 +37,17 @@ function NumericFilters() {
           <option value="igual a">igual a</option>
         </select>
       </label>
-      <input
-        id="value"
-        type="number"
-        data-testid="value-filter"
-        onChange={ (e) => handleNumericChanges(e) }
-        value={ selectedFilters.value }
-      />
+      <label htmlFor="value">
+        Valor:
+        <input
+          id="value"
+          name="value"
+          type="number"
+          data-testid="value-filter"
+          onChange={ (e) => handleNumericChanges(e) }
+          value={ selectedFilters.value }
+        />
+      </label>
       <button
         type="button"
         data-testid="button-filter"

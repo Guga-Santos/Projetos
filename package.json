@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^6.3.0",
+    "react-router-transition-switch": "^1.1.2",
     "react-scripts": "^3.4.1"
   },
   "jest": {

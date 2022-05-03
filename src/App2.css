@@ -1,0 +1,511 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {font-family: "Star Jedi"; src: url("//db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.eot"); src: url("//db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.woff") format("woff"), url("//db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.svg#Star Jedi") format("svg"); }
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Press Start 2P', cursive;
+
+    overflow: visible;
+  }
+  
+  /* TABLE */
+
+  .big-container {
+    position: fixed;
+
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-end;
+    
+
+    background-color: black;
+    background: url("./images/FUNDO.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: 50% 50%;
+    height: 100vh;
+    width: 100vw;
+
+    animation-name: intro-transition ;
+    animation-duration: 3s;
+  }
+
+  @keyframes intro-transition {
+    /* 0% {filter: opacity(0%);} */
+    0% {background: none; background-color: black; }
+    
+  }
+
+  .table-container {
+    position: absolute;
+
+    top: 10vh;
+    left: 5vw;
+
+    color: white;
+    font-size: 1.2vh;
+
+    border: solid white 1px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding-bottom: 3vh;
+
+    width: 22vw;
+    height: 70vh;
+  }
+  
+  
+  .trHead {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  .trHead th {
+      width: 9vw;
+      border: solid white 1px;
+      height: 3.2vh;
+      text-align: left;
+      padding: 0.5vh 0.5vw;
+  }
+
+
+  .trBody {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    
+  }
+
+  .trBody td {
+    width: 10vw;
+    border: solid white 1px;
+    text-align: center;
+    height: 3.2vh;
+    padding: 0.5vh 0;
+
+}
+
+.planets-img {
+    max-width: 12vw;
+    position: absolute;
+
+    top: 10vh;
+    left: 10vw;
+
+    clip-path: circle(5.7rem);
+}
+
+.planets-btns {
+    position: absolute;
+    top: 80vh;
+    left: 5vw;
+
+    /* border: solid white 1px; */
+
+    width: 22vw;
+    height: 4vh;
+}
+
+.planets-btns button {
+    width: 11vw;
+    height: 4vh;
+
+    color: white;
+
+    border-style: none;
+    border: white solid 1px;
+
+    background-color: transparent;
+    
+    cursor: pointer;
+}
+
+.planets-btns button:hover {
+    background-color: rgba(255,255,255, 0.06);
+}
+
+.planets-btns button:active {
+    background-color: rgba(255,255,255, 0.11);
+}
+
+input {
+  color: black
+}
+
+/* span */
+
+.spans-container {
+  /* border: 1px white solid; */
+
+  display: flex;
+  justify-content: center;
+
+  width: 12vw;
+  
+  position: absolute;
+  left: 10vw;
+  top: 34vh;
+}
+
+.span {
+
+  font-size: 0.7vh;
+  
+  clip-path: circle();
+  
+  background-color: white;
+  
+  margin: 0 5px;
+  }
+
+  .spanBig {
+
+    font-size: 1.2vh;
+    
+    clip-path: circle();
+    
+    background-color: #feda4a;
+    
+    margin: 0 5px;
+    }
+
+/* FILTERS  */
+
+.h2-filtros {
+  width: 12vw;
+
+  margin-left: -1vw;
+
+  margin-top: 1vh;
+  padding-bottom: 0.5vh;
+  padding-left: 1vw;
+  border-bottom: white 1px solid;
+}
+
+.filters-container {
+  position: absolute;
+  left: 28vw;
+  top: 10vh;
+
+  border: white solid 1px;
+
+  width: 12vw;
+  height: 73.9vh;
+
+
+  padding: 0 0vw 0 1vw;
+
+  font-size: 1.2vh;
+
+}
+
+.filters-container button {
+  width: 11vw;
+  height: 4vh;
+
+  color: white;
+
+  border-style: none;
+  border: white solid 1px;
+
+  background-color: transparent;
+
+  margin: 1vh 0vw;
+  
+  cursor: pointer;
+  font-size: 1.2vh;
+}
+
+.filters-container button:hover {
+  background-color: rgba(255,255,255, 0.06);
+}
+
+.filters-container button:active {
+  background-color: rgba(255,255,255, 0.11);
+}
+
+.numeric-filter-container,
+.filter-name {
+  margin-top: 1.7vh;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.numeric-filter-container label {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.55vw;
+}
+
+.numeric-filter-container > label > select {
+  width: 11.1vw;
+  margin-top: 0.5vh;
+
+  font-size: 1.2vh;
+}
+
+option {
+  width: 11.1vw;
+  height: 3vh;
+  margin-top: 0.5vh;
+
+  background-color: black;
+  color: white;
+
+  font-size: 1.2vh;
+}
+
+select,
+input[type="number"],
+input[type="text"] {
+  width: 11vw;
+  height: 4vh;
+
+  font-size: 1.2vh;
+  color: white;
+
+  border-style: none;
+  border: white solid 1px;
+
+  background-color: transparent;
+
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+
+  padding-left: .5vw;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 10.5vw;
+}
+
+input[type='radio'] {
+  margin-bottom: 1vh;
+}
+
+/* Sort-filter */
+
+.sort-container {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 48vh;
+  left: 0vw;
+
+  width: 11vw;
+
+  margin-top: 5vh;
+  padding: 1vh 1vw;
+  border-top: solid white 1px;
+}
+
+.sort-container input {
+  margin-right: 1vw;
+}
+
+/* FILTERS On Screen */
+
+.filtersOnScreen {
+  position: absolute;
+  top: 0vh;
+  left: 15vw;
+}
+
+
+.filters-selected {
+  display: flex;
+  justify-content: space-between;
+
+  width: 15vw;
+  
+}
+
+.filters-selected button {
+ width: 3vw;
+ padding: 0;
+
+ z-index: 2;
+}
+
+.filters-selected h4 {
+  max-width: 11vw;
+
+  line-height: 1.7vh;
+
+  padding-right: 1vh;
+ }
+/* HEADER */
+
+.header-container {
+  height: 6vh;
+
+  font-family: 'Star Jedi', arial;
+
+  background-color: black;
+
+  border-bottom: 1px solid white;
+
+  display: flex;
+  align-items: center;
+}
+
+.imagem {
+  position: absolute;
+  top: 1.8vh;
+  left: 4vw;
+
+  width: 10.5vw;
+
+  z-index: 1;
+}
+  
+
+/* TEXTSCROLLING */
+
+.text-body {
+  width: 60vw;
+  height: 100vh;
+  background: transparent;
+  overflow: hidden;
+
+  /* border: white solid 1px; */
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 53vh;
+  top: -250px;
+  /* background-image: linear-gradient(0deg, transparent, black 2000%); */
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20vh;
+  height: 200px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 4px;
+  line-height: 100%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 120vh;
+  width: 50vw;
+  transform-origin: 50% 100%;
+  animation: crawl 120s linear;
+  animation-delay: 2s;
+  font-size: 4.8vh;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: -100px;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -6500px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+/* INTRO */
+
+.intro-container {
+  width: 100vw;
+  height: 100vh;
+
+  /* background: url('https://images4.alphacoders.com/653/thumb-1920-653613.jpg'); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+  overflow: hidden;
+}
+
+.intro-container h3 {
+  color: white;
+
+  position: absolute;
+  top: 58vh;
+
+  letter-spacing: 3vw;
+  font-family: "Star Jedi", sans-serif;
+
+  animation-name: planets-title;
+  animation-duration: 9s;
+  animation-timing-function: ease;
+
+}
+
+@keyframes planets-title {
+  0%  { color: transparent;}
+  90% { color: transparent;}
+
+  
+}
+
+.title-intro {
+  position: absolute;
+
+  background-clip: content-box;
+
+  font-size: 13vh;
+  font-family: "Star Jedi", sans-serif;
+
+  background: url('https://wallpaperaccess.com/full/11822.jpg') 0 0 / cover no-repeat;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+
+ background-size: 110%;
+ background-position-y: -30vh ;
+ background-position-x:center;
+
+
+  animation-name: teste;
+  animation-duration: 9s;
+  animation-timing-function: ease;
+
+}
+
+@keyframes teste {
+  0%   { transform: scaleX(20) scaleY(20); color: transparent; background-size: 300%; background-position-y: -150vh;}
+
+  100% { transform: scaleX(1) scaleY(1) rotateX(0deg); color: black; background-size: 110%;}
+}

@@ -6,18 +6,20 @@ function SortFilter() {
   const { INITIAL_COLUMN, handleSorted, clickAndSort } = context;
 
   return (
-    <div>
-      <select
-        onChange={ handleSorted }
-        data-testid="column-sort"
-        id="column"
-      >
-        {INITIAL_COLUMN.map((obj) => (
-          <option key={ obj } value={ obj }>{obj}</option>
-        ))}
-      </select>
+    <div className="sort-container">
+      <label htmlFor="column">
+        Coluna:
+        <select
+          onChange={ handleSorted }
+          data-testid="column-sort"
+          id="column"
+        >
+          {INITIAL_COLUMN.map((obj) => (
+            <option key={ obj } value={ obj }>{obj}</option>
+          ))}
+        </select>
+      </label>
       <label htmlFor="SORT">
-        Ascendente
         <input
           type="radio"
           name="SORT"
@@ -26,7 +28,8 @@ function SortFilter() {
           onChange={ handleSorted }
           data-testid="column-sort-input-asc"
         />
-        Descendente
+        Ascendente
+        <br />
         <input
           type="radio"
           name="SORT"
@@ -35,6 +38,7 @@ function SortFilter() {
           onChange={ handleSorted }
           data-testid="column-sort-input-desc"
         />
+        Descendente
       </label>
       <button
         type="button"

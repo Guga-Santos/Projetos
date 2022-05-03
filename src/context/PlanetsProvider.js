@@ -10,9 +10,15 @@ const INITIAL_COLUMN = [
   'rotation_period',
   'surface_water'];
 
+const TEN = 10;
+
 function PlanetsProvider(props) {
   const { children } = props;
   const [data, setData] = useState([]);
+
+  const [filteredArray, setFilteredArray] = useState(TEN);
+
+  const [index, setIndex] = useState(0);
 
   useFetch(setData);
 
@@ -35,6 +41,8 @@ function PlanetsProvider(props) {
 
   const handleChange = ({ target: { value } }) => {
     setFilter({ filterByName: { name: value.toLowerCase() } });
+    setFilteredArray(data.filter((object) => object.name.toLowerCase()
+      .includes(value.toLowerCase())).length);
   };
 
   const handleClick = () => {
@@ -57,11 +65,31 @@ function PlanetsProvider(props) {
       id,
       ...prev,
     ]));
+
+    numericFilter.forEach(({ column, comparison, value }) => {
+      const filtered = (fil) => {
+        if (comparison === 'maior que') {
+          return fil[column] > Number(value);
+        }
+        if (comparison === 'menor que') {
+          return fil[column] < Number(value);
+        }
+        if (comparison === 'igual a') {
+          return fil[column] === value;
+        }
+      };
+      const dataFiltered = data.filter((ele) => filtered(ele));
+      setFilteredArray(dataFiltered.length);
+    });
+    if (numericFilter.length === 1) {
+      setFilteredArray(TEN);
+    }
   };
 
   const resetFilters = () => {
     setNumericFilter([]);
     setColumna(INITIAL_COLUMN);
+    setFilteredArray(TEN);
   };
 
   const handleSorted = ({ target: { value, id } }) => {
@@ -85,6 +113,22 @@ function PlanetsProvider(props) {
     setDataOrder([...known, ...unknown]);
   };
 
+  const nextClick = () => {
+    if (index === filteredArray - 1) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  };
+
+  const previewsClick = () => {
+    if (index === 0) {
+      setIndex(filteredArray - 1);
+    } else {
+      setIndex(index - 1);
+    }
+  };
+
   const context = {
     INITIAL_COLUMN,
     data,
@@ -94,6 +138,8 @@ function PlanetsProvider(props) {
     columna,
     order,
     dataOrder,
+    index,
+    filteredArray,
     handleChange,
     handleClick,
     handleNumericChanges,
@@ -101,6 +147,9 @@ function PlanetsProvider(props) {
     resetFilters,
     handleSorted,
     clickAndSort,
+    nextClick,
+    previewsClick,
+    setFilteredArray,
   };
 
   return (

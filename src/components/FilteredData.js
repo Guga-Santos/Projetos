@@ -8,6 +8,8 @@ export default function FilteredData() {
     dataOrder,
     numericFilter,
     filter,
+    index,
+    setFilteredArray,
   } = context;
 
   const { filterByName } = filter;
@@ -27,24 +29,25 @@ export default function FilteredData() {
       }
     };
     dataFiltered = dataFiltered.filter((ele) => filtered(ele));
+    setFilteredArray(dataFiltered.length);
   });
 
   return dataFiltered.filter((object) => object.name.toLowerCase()
-    .includes(filterByName.name))
-    .map((obj) => (
-      <tr key={ obj.name }>
+    .includes(filterByName.name.toLowerCase()))
+    .map((obj, i) => (i === index ? (
+      <tr key={ obj.name } className="trBody">
         <td data-testid="planet-name">{obj.name}</td>
-        <td>{obj.rotation_period}</td>
-        <td>{obj.orbital_period}</td>
-        <td>{obj.diameter}</td>
+        <td>{`${obj.rotation_period} hours`}</td>
+        <td>{`${obj.orbital_period} days`}</td>
+        <td>{`${obj.diameter} Km`}</td>
         <td>{obj.climate}</td>
         <td>{obj.gravity}</td>
         <td>{obj.terrain}</td>
-        <td>{obj.surface_water}</td>
+        <td>{`${obj.surface_water} %`}</td>
         <td>{obj.population}</td>
-        <td>{obj.films.map((film) => film)}</td>
+        {/* <td>{obj.films.map((film) => film)}</td>
         <td>{obj.created}</td>
         <td>{obj.edited}</td>
-        <td>{obj.url}</td>
-      </tr>));
+        <td>{obj.url}</td> */}
+      </tr>) : null));
 }

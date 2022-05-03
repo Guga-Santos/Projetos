@@ -5,7 +5,7 @@ function FilterByName() {
   const context = useContext(PlanetsContext);
   const { handleChange } = context;
   return (
-    <label htmlFor="input-search">
+    <label htmlFor="input-search" className="filter-name">
       Search:
       <input
         type="text"
